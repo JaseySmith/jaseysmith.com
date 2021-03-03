@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/project.css">
+    <title>Jasey Smith | Projects</title>
+  </head>
+  <body>
+    <header id="header">
+      <div class="nav-container">
+        <a class="logo" href="index.html">J<span>S</span></span></a>
+        <nav id="navbar">
+          <input type="checkbox" id="check" onClick="disableScroll()">
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <ul class="nav-links">
+            <li><a onclick="uncheck(), enableScroll()" href="http://jaseysmith.com/#projects">Back</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="hero">
+      <div class="container">
+        <h1>Scary Places</h1>
+        <p class="text">A fully responsive website designed to find scary places near you.</p>
+        <div class="row">
+          <a class="button" href="http://scaryplacesnearme.com/" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Website</a>
+          <a class="alt-button"href="#" target="_blank"><i class="fas fa-code"></i>View Code</a>
+        </div>
+        <img src="img/project-one-img.jpg" alt="Project image" class="project-img" width="100%">
+        <h2>About this project</h2>
+        <div class="horizontal-line"></div>
+        <p class="text margin-bottom">Scaryplaces.com is one of my personal projects that is currently being developed. I was inspired to start this project when I couldn't find any websites dedicated to finding scary places.<br><br>This project is coded completely from scratch. All design and development was done by me. My biggest challenge was the carousel since I was new to JS. I am currently developing the location finder component that will search databases to find and display scary places for the user.</p>
+        <h2>Technical sheet</h2>
+        <div class="horizontal-line"></div>
+        <p class="text">Code technologies I got involved with while working on this project:</p>
+        <ul class="language-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+        </ul>
+        <div class="xl-horizontal-line"></div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <nav class="footer-links">
+          <ul>
+            <li><a href="#"><i class="fab fa-instagram social-link"></i></a></li>
+            <li><a href="#"><i class="fab fa-github social-link"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in social-link"></i></a></li>
+            <li><a href="#"><i class="fab fa-codepen social-link"></i></a></li>
+          </ul>
+        </nav>
+        <p class="copyright">© 2021 <a href="index.html">Jasey Smith</a></p>
+      </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
