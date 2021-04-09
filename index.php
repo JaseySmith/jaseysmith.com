@@ -1,3 +1,5 @@
+<?php include 'action.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,15 +11,15 @@
   </head>
   <body>
     <header id="header">
-      <div class="nav-container">
-        <a class="logo" href="index.html">J<span>S</span></span></a>
+      <div class="container">
+        <a class="logo" href="index.php">J<span>S</span></span></a>
         <nav id="navbar">
           <input type="checkbox" id="check" onClick="disableScroll()">
           <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
           </label>
           <ul class="nav-links">
-            <li><a onclick="uncheck(), enableScroll()" href="index.html">Home</a></li>
+            <li><a onclick="uncheck(), enableScroll()" href="index.php">Home</a></li>
             <li><a onclick="uncheck(), enableScroll()" href="#about">About</a></li>
             <li><a onclick="uncheck(), enableScroll()" href="#projects">Work</a></li>
             <li><a onclick="uncheck(), enableScroll()" href="#contact">Contact</a></li>
@@ -25,12 +27,12 @@
         </nav>
       </div>
     </header>
-    <section id="home-hero">
+    <section id="home">
       <div class="container">
         <div class="content-column">
           <h1>Hi,<br> I'm Jasey</h1>
           <p class="home-text">A <span class="green-text">front-end developer</span> looking to <span class="line-break">grow your business with code.</span></p>
-          <a href="#projects" class="cta-button">View my work</a>
+          <a href="#projects" class="button">View my work</a>
         </div>
         <div class="position-column">
           <div class="canvas-column">
@@ -78,7 +80,7 @@
     <section id="about">
       <h2>About Me</h2>
       <hr class="h2-divider">
-      <div class="about-container">
+      <div class="container">
         <div class="card">
           <div class="hex-wrap">
             <div class="hex"><img class="about-icons" src="img/creativity.svg" alt="Design tools"></div>
@@ -105,26 +107,26 @@
     <section id="projects">
       <h2>Recent Work</h2>
       <hr class="h2-divider">
-      <div class="projects-container">
+      <div class="container">
         <div class="img-container">
-          <img class="proj-img" src="img/project-one-img.jpg" alt="scaryplaces.com project image">
+          <img class="proj-img" src="img/project-one-img.jpg" alt="project image">
           <div class="overlay">
             <p class="proj-desc">Scary Places</p>
-            <a class="proj-button" href="project-one.html">View Project</a>
+            <a class="button" href="project-one.html">View Project</a>
           </div>
         </div>
         <div class="img-container">
-          <img class="proj-img" src="img/project-two-img.jpg" alt="brunettesilhouette.com project image">
+          <img class="proj-img" src="img/project-two-img.jpg" alt="project image">
           <div class="overlay">
-            <p class="proj-desc">Brunette Silhouette</p>
-            <a class="proj-button" href="project-two.html">View Project</a>
+            <p class="proj-desc">Hay's Clays Co.</p>
+            <a class="button" href="project-two.html">View Project</a>
           </div>
         </div>
         <div class="img-container">
-          <img class="background-img" src="img/project-three-img.jpg" alt="jaseysmith.com project image">
+          <img class="background-img" src="img/project-three-img.jpg" alt="project image">
           <div class="overlay">
             <p class="proj-desc">Jasey Smith</p>
-            <a class="proj-button" href="project-three.html">View Project</a>
+            <a class="button" href="project-three.html">View Project</a>
           </div>
         </div>
         <div class="img-container project-four">
@@ -133,20 +135,21 @@
       </div>
     </section>
     <section id="contact">
-      <div class="contact-container">
+      <div class="container">
         <h2>Let's Talk!</h2>
         <hr class="h2-divider">
         <p class="contact-text">Have a question or want to work together?</p>
-        <form class="form" method="POST" data-netlify="true">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="text" name="email" placeholder="Enter email" required>
-          <textarea name="message" placeholder="How may I help?"></textarea>
-          <input type="submit" class="submit-button" value="Send Message">
+        <form class="form" method="POST" action="index.php#contact">
+          <input type="text" name="name" placeholder="Name" value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name'], ENT_QUOTES) : ''; ?>">
+          <input type="text" name="email" placeholder="Enter email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES) : ''; ?>">
+          <textarea name="message" placeholder="How may I help?"><?php echo isset($_POST['message']) ? htmlspecialchars($_POST['message'], ENT_QUOTES) : ''; ?></textarea>
+          <?php echo $alert; ?>
+          <input type="submit" name="submit" class="button" value="Send Message">
         </form>
       </div>
     </section>
     <footer>
-      <div class="footer-container">
+      <div class="container">
         <nav class="footer-links">
           <ul>
             <li><a href="#"><i class="fab fa-instagram social-link"></i></a></li>
@@ -155,7 +158,7 @@
             <li><a href="#"><i class="fab fa-codepen social-link"></i></a></li>
           </ul>
         </nav>
-        <p class="copyright">© 2021 <a href="index.html">Jasey Smith</a></p>
+        <p class="copyright">© 2021 <a href="index.php">Jasey Smith</a></p>
       </div>
     </footer>
     <script src="scripts/script.js"></script>
