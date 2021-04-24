@@ -22,15 +22,15 @@ if(isset($_POST['submit'])) {
             // If pass send email
             try{
                 $mail->isSMTP();
-                $mail->Host = 'gator4140.hostgator.com';
+                $mail->Host = '';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'contact@jaseysmith.com'; // Email address which you want to use as SMTP server
-                $mail->Password = 'Dirtbike98*'; // Email address Password
+                $mail->Username = ''; // Email address which you want to use as SMTP server
+                $mail->Password = ''; // Email address Password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = '25';
         
-                $mail->setFrom('contact@jaseysmith.com'); // Email address which you used as SMTP server
-                $mail->addAddress('jaseyhsmith@gmail.com'); // Email address where you want to receive emails 
+                $mail->setFrom(''); // Email address which you used as SMTP server
+                $mail->addAddress(''); // Email address where you want to receive emails 
         
                 $mail->isHTML(true);
                 $mail->Subject = 'Message Received (Contact Page)';
